@@ -5,10 +5,8 @@ import matplotlib.pyplot as plt
 import concurrent.futures
 from huggingface_hub import login
 
-# Set torch settings for speed
-torch.backends.cudnn.benchmark = True  # Optimize for fixed input sizes
+torch.backends.cudnn.benchmark = True  
 
-# Enable memory-efficient attention (if supported by your hardware)
 def enable_xformers(pipe):
     try:
         if hasattr(pipe, "enable_xformers_memory_efficient_attention"):
